@@ -12,6 +12,7 @@
 @interface HomeViewController ()
 @property(nonatomic,strong)UITableView *tableView ;
 @property(nonatomic,strong)UISearchBar *searchBar ;
+@property(nonatomic,strong)NSArray *dataArray ;
 @end
 
 @implementation HomeViewController
@@ -19,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, KTopHeight,KScreenWidth ,KScreenHight - KTopHeight - KBottomBarHeight) style:UITableViewStylePlain];
+    self.tableView.dataSource = self ;
+    self.tableView.delegate = self ;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine ;
     [self.view addSubview:self.tableView] ;
     [self setSearchBar];
 }
@@ -32,14 +36,18 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - tableviewDelegate dataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 0 ;
 }
-*/
-
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataArray.count ;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60 ;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return [[UITableViewCell alloc] init] ;
+}
 @end

@@ -19,3 +19,8 @@
 #define KBottomBarHeight 69
 #define KNavBarH 49
 #define KStateBarH 20 
+
+#define Font12 12 
+#define Font14 14
+#define Font16 16 
+#define Font18 18 
