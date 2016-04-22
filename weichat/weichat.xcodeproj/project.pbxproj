@@ -15,6 +15,10 @@
 		C9ED92181CC866DE00E38BA9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9ED92161CC866DE00E38BA9 /* LaunchScreen.storyboard */; };
 		C9ED92231CC866DE00E38BA9 /* weichatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED92221CC866DE00E38BA9 /* weichatTests.m */; };
 		C9ED922E1CC866DF00E38BA9 /* weichatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED922D1CC866DF00E38BA9 /* weichatUITests.m */; };
+		C9ED923E1CC8AE8300E38BA9 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED923D1CC8AE8300E38BA9 /* BaseTabBarController.m */; };
+		C9ED924A1CC8B32E00E38BA9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED92491CC8B32E00E38BA9 /* BaseViewController.m */; };
+		C9ED924D1CC8B3D400E38BA9 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED924C1CC8B3D400E38BA9 /* BaseNavigationVC.m */; };
+		C9ED92501CC8B3FE00E38BA9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED924F1CC8B3FE00E38BA9 /* HomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,15 @@
 		C9ED92291CC866DE00E38BA9 /* weichatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weichatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9ED922D1CC866DF00E38BA9 /* weichatUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = weichatUITests.m; sourceTree = "<group>"; };
 		C9ED922F1CC866DF00E38BA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9ED923C1CC8AE8300E38BA9 /* BaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		C9ED923D1CC8AE8300E38BA9 /* BaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
+		C9ED92401CC8AED900E38BA9 /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		C9ED92481CC8B32E00E38BA9 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		C9ED92491CC8B32E00E38BA9 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		C9ED924B1CC8B3D400E38BA9 /* BaseNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationVC.h; sourceTree = "<group>"; };
+		C9ED924C1CC8B3D400E38BA9 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
+		C9ED924E1CC8B3FE00E38BA9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		C9ED924F1CC8B3FE00E38BA9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +114,12 @@
 		C9ED92071CC866DE00E38BA9 /* weichat */ = {
 			isa = PBXGroup;
 			children = (
+				C9ED92441CC8B27B00E38BA9 /* Mine */,
+				C9ED92431CC8B26C00E38BA9 /* Discover */,
+				C9ED92421CC8B23C00E38BA9 /* AddressBook */,
+				C9ED92411CC8B22300E38BA9 /* Home */,
+				C9ED923F1CC8AEC100E38BA9 /* Others */,
+				C9ED923B1CC8AE0F00E38BA9 /* TabBarController */,
 				C9ED920B1CC866DE00E38BA9 /* AppDelegate.h */,
 				C9ED920C1CC866DE00E38BA9 /* AppDelegate.m */,
 				C9ED920E1CC866DE00E38BA9 /* ViewController.h */,
@@ -138,6 +157,57 @@
 				C9ED922F1CC866DF00E38BA9 /* Info.plist */,
 			);
 			path = weichatUITests;
+			sourceTree = "<group>";
+		};
+		C9ED923B1CC8AE0F00E38BA9 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				C9ED923C1CC8AE8300E38BA9 /* BaseTabBarController.h */,
+				C9ED923D1CC8AE8300E38BA9 /* BaseTabBarController.m */,
+				C9ED92481CC8B32E00E38BA9 /* BaseViewController.h */,
+				C9ED92491CC8B32E00E38BA9 /* BaseViewController.m */,
+				C9ED924B1CC8B3D400E38BA9 /* BaseNavigationVC.h */,
+				C9ED924C1CC8B3D400E38BA9 /* BaseNavigationVC.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		C9ED923F1CC8AEC100E38BA9 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				C9ED92401CC8AED900E38BA9 /* Define.h */,
+			);
+			name = Others;
+			sourceTree = "<group>";
+		};
+		C9ED92411CC8B22300E38BA9 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C9ED924E1CC8B3FE00E38BA9 /* HomeViewController.h */,
+				C9ED924F1CC8B3FE00E38BA9 /* HomeViewController.m */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		C9ED92421CC8B23C00E38BA9 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AddressBook;
+			sourceTree = "<group>";
+		};
+		C9ED92431CC8B26C00E38BA9 /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Discover;
+			sourceTree = "<group>";
+		};
+		C9ED92441CC8B27B00E38BA9 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Mine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +340,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9ED923E1CC8AE8300E38BA9 /* BaseTabBarController.m in Sources */,
+				C9ED924A1CC8B32E00E38BA9 /* BaseViewController.m in Sources */,
 				C9ED92101CC866DE00E38BA9 /* ViewController.m in Sources */,
+				C9ED924D1CC8B3D400E38BA9 /* BaseNavigationVC.m in Sources */,
 				C9ED920D1CC866DE00E38BA9 /* AppDelegate.m in Sources */,
+				C9ED92501CC8B3FE00E38BA9 /* HomeViewController.m in Sources */,
 				C9ED920A1CC866DE00E38BA9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -498,6 +572,7 @@
 				C9ED92341CC866DF00E38BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9ED92351CC866DF00E38BA9 /* Build configuration list for PBXNativeTarget "weichatTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +581,7 @@
 				C9ED92371CC866DF00E38BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C9ED92381CC866DF00E38BA9 /* Build configuration list for PBXNativeTarget "weichatUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +590,7 @@
 				C9ED923A1CC866DF00E38BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

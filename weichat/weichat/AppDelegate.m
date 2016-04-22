@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Define.h"
+#import "BaseTabBarController.h"
+#import "HomeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +19,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:KScreenBounds] ;
+//    BaseTabBarController *baseTabBarVC = [[BaseTabBarController alloc] init] ;
+    self.window.rootViewController = [[HomeViewController alloc] init] ;
+    [self.window makeKeyAndVisible] ;
+    [self setNavigationBar] ;
     return YES;
 }
 
@@ -41,5 +48,12 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-
+- (void)setNavigationBar {
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent ;
+    UINavigationBar *bar = [UINavigationBar appearance] ;
+    CGFloat rgb = 0.1 ;
+    bar.tintColor = [UIColor whiteColor] ;
+    bar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
+    bar.barTintColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.9];
+}
 @end
