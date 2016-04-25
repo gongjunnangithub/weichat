@@ -20,8 +20,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:KScreenBounds] ;
-//    BaseTabBarController *baseTabBarVC = [[BaseTabBarController alloc] init] ;
-    self.window.rootViewController = [[HomeViewController alloc] init] ;
+    BaseTabBarController *baseTabBarVC = [[BaseTabBarController alloc] init] ;
+    self.window.rootViewController = baseTabBarVC;//[[HomeViewController alloc] init] ;
     [self.window makeKeyAndVisible] ;
     [self setNavigationBar] ;
     return YES;

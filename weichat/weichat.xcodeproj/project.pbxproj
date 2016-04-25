@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12D0AE95C3366DD6998C5F46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3DDA2CF2A81A79E2497C8B /* libPods.a */; };
+		C2F3F81E1CCE5C6000522CA0 /* NetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F3F81D1CCE5C6000522CA0 /* NetRequest.m */; };
+		C2F3F8211CCE62AA00522CA0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F3F8201CCE62AA00522CA0 /* MessageModel.m */; };
 		C9ED44BA1CC9ED1700C04163 /* AppUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED44B91CC9ED1700C04163 /* AppUnit.m */; };
 		C9ED44BD1CC9F16500C04163 /* HomeCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED44BC1CC9F16500C04163 /* HomeCellTableViewCell.m */; };
 		C9ED920A1CC866DE00E38BA9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED92091CC866DE00E38BA9 /* main.m */; };
@@ -45,6 +47,10 @@
 		0D3DDA2CF2A81A79E2497C8B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D60A9BA8EFB3D42533AFD4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6FEF6EA54CE52A01EADF9B3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		C2F3F81C1CCE5C6000522CA0 /* NetRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetRequest.h; sourceTree = "<group>"; };
+		C2F3F81D1CCE5C6000522CA0 /* NetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequest.m; sourceTree = "<group>"; };
+		C2F3F81F1CCE62AA00522CA0 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
+		C2F3F8201CCE62AA00522CA0 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
 		C9ED44B81CC9ED1700C04163 /* AppUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppUnit.h; sourceTree = "<group>"; };
 		C9ED44B91CC9ED1700C04163 /* AppUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUnit.m; sourceTree = "<group>"; };
 		C9ED44BB1CC9F16500C04163 /* HomeCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCellTableViewCell.h; sourceTree = "<group>"; };
@@ -119,6 +125,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C2F3F81B1CCE5C3C00522CA0 /* NetWork */ = {
+			isa = PBXGroup;
+			children = (
+				C2F3F81C1CCE5C6000522CA0 /* NetRequest.h */,
+				C2F3F81D1CCE5C6000522CA0 /* NetRequest.m */,
+				C2F3F81F1CCE62AA00522CA0 /* MessageModel.h */,
+				C2F3F8201CCE62AA00522CA0 /* MessageModel.m */,
+			);
+			name = NetWork;
+			sourceTree = "<group>";
+		};
 		C9ED91FC1CC866DE00E38BA9 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +161,7 @@
 		C9ED92071CC866DE00E38BA9 /* weichat */ = {
 			isa = PBXGroup;
 			children = (
+				C2F3F81B1CCE5C3C00522CA0 /* NetWork */,
 				C9ED92441CC8B27B00E38BA9 /* Mine */,
 				C9ED92431CC8B26C00E38BA9 /* Discover */,
 				C9ED92421CC8B23C00E38BA9 /* AddressBook */,
@@ -255,7 +273,6 @@
 				C9ED92011CC866DE00E38BA9 /* Sources */,
 				C9ED92021CC866DE00E38BA9 /* Frameworks */,
 				C9ED92031CC866DE00E38BA9 /* Resources */,
-				19172D9D1BC083FC7B44A12A /* Embed Pods Frameworks */,
 				73052E616EB8C2812F567EE2 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -373,21 +390,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		19172D9D1BC083FC7B44A12A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		73052E616EB8C2812F567EE2 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -430,10 +432,12 @@
 				C9ED92101CC866DE00E38BA9 /* ViewController.m in Sources */,
 				C9ED924D1CC8B3D400E38BA9 /* BaseNavigationVC.m in Sources */,
 				C9ED920D1CC866DE00E38BA9 /* AppDelegate.m in Sources */,
+				C2F3F81E1CCE5C6000522CA0 /* NetRequest.m in Sources */,
 				C9ED44BA1CC9ED1700C04163 /* AppUnit.m in Sources */,
 				C9ED92501CC8B3FE00E38BA9 /* HomeViewController.m in Sources */,
 				C9ED44BD1CC9F16500C04163 /* HomeCellTableViewCell.m in Sources */,
 				C9ED920A1CC866DE00E38BA9 /* main.m in Sources */,
+				C2F3F8211CCE62AA00522CA0 /* MessageModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
