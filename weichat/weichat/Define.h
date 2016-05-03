@@ -24,3 +24,8 @@
 #define Font14 14
 #define Font16 16 
 #define Font18 18 
+
+#define SystenVersion        [UIDevice currentDevice].systemVersion.intValue
+
+#pragma mark -- color 
+#define TabBarTitleColor  [UIColor colorWithRed:0 green:(190 / 255.0) blue:(12 / 255.0) alpha:1] 

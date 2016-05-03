@@ -19,11 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, KTopHeight,KScreenWidth ,KScreenHight - KTopHeight - KBottomBarHeight) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,KScreenWidth ,KScreenHight - KTopHeight - KBottomBarHeight) style:UITableViewStylePlain];
     self.tableView.dataSource = self ;
     self.tableView.delegate = self ;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine ;
     [self.view addSubview:self.tableView] ;
+    if (SystenVersion >= 7.0) {
+        self.edgesForExtendedLayout = UIRectEdgeNone ;
+    }
     [self setSearchBar];
 }
 - (void)setSearchBar {

@@ -8,6 +8,11 @@
 
 #import "BaseTabBarController.h"
 #import "HomeViewController.h"
+#import "Define.h"
+#import "ContactsViewController.h"
+#import "DiscoverViewController.h"
+#import "MineViewController.h"
+#import "BaseNavigationVC.h"
 @interface BaseTabBarController ()
 - (void)setTabs ;
 @end
@@ -25,20 +30,24 @@
 }
 
 - (void)setTabs {
-    [self addVCWithVC:[HomeViewController new] tabBarTitle:@"微信" PictureName:@"tabbar_mainframeHL" AndNavTitle:@"微信"];
-    [self addVCWithVC:[HomeViewController new] tabBarTitle:@"微信" PictureName:@"tabbar_mainframeHL" AndNavTitle:@"微信"];
-    [self addVCWithVC:[HomeViewController new] tabBarTitle:@"微信" PictureName:@"tabbar_mainframeHL" AndNavTitle:@"微信"];
-    [self addVCWithVC:[HomeViewController new] tabBarTitle:@"微信" PictureName:@"tabbar_mainframeHL" AndNavTitle:@"微信"];
+    [self addVCWithVC:[HomeViewController new] tabBarTitle:@"微信" PictureName:@"tabbar_mainframe" AndNavTitle:@"微信"];
+    [self addVCWithVC:[ContactsViewController new] tabBarTitle:@"通讯录" PictureName:@"tabbar_contacts" AndNavTitle:@"通讯录"];
+    [self addVCWithVC:[DiscoverViewController new] tabBarTitle:@"发现" PictureName:@"tabbar_discover" AndNavTitle:@"发现"];
+    [self addVCWithVC:[MineViewController new] tabBarTitle:@"我" PictureName:@"tabbar_me" AndNavTitle:@"我"];
 
 
 }
 - (void)addVCWithVC:(UIViewController *)vc tabBarTitle:(NSString *)title PictureName:(NSString *)pictureNam AndNavTitle:(NSString *)navTitle{
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc] ;
-    nav.title = navTitle ;
+    UINavigationController *nav = [[BaseNavigationVC alloc] initWithRootViewController:vc] ;
     [self addChildViewController:nav] ;
-    nav.tabBarItem.title = title ;
-//    nav.tabBarItem.selectedImage = [UIImage imageNamed:pictureNam] ;
-    nav.tabBarItem.image = [UIImage imageNamed:pictureNam] ;
-    nav.tabBarController.tabBar.tintColor = [UIColor greenColor] ;
+    nav.navigationItem.title = navTitle ;
+    nav.title = navTitle ;
+    UITabBarItem *item = nav.tabBarItem ;
+    item.title = title ;
+    NSString *selectedImageName = [NSString stringWithFormat:@"%@HL",pictureNam];
+    item.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ;
+    item.image = [UIImage imageNamed:pictureNam] ;
+    [item setTitleTextAttributes:@{NSForegroundColorAttributeName :TabBarTitleColor} forState:UIControlStateSelected] ;
+
 }
 @end

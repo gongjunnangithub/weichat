@@ -22,8 +22,8 @@
     self.window = [[UIWindow alloc] initWithFrame:KScreenBounds] ;
     BaseTabBarController *baseTabBarVC = [[BaseTabBarController alloc] init] ;
     self.window.rootViewController = baseTabBarVC;//[[HomeViewController alloc] init] ;
-    [self.window makeKeyAndVisible] ;
     [self setNavigationBar] ;
+    [self.window makeKeyAndVisible] ;
     return YES;
 }
 
@@ -52,8 +52,10 @@
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent ;
     UINavigationBar *bar = [UINavigationBar appearance] ;
     CGFloat rgb = 0.1 ;
-    bar.tintColor = [UIColor whiteColor] ;
-    bar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor]};
     bar.barTintColor = [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.9];
+    [bar setBarTintColor:[UIColor colorWithRed:rgb green:rgb blue:rgb alpha:0.9]];
+    bar.tintColor = [UIColor whiteColor] ;
+    [bar setTintColor:[UIColor whiteColor]];
+    bar.titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont systemFontOfSize:20]};
 }
 @end
