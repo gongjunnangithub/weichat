@@ -20,6 +20,7 @@
     [dateBase open] ;
 
 }
+// 按 最近日期 排序 内容 按日期排序
 -(void)crateSqlite {
     FMDatabase *dateBase = [FMDatabase databaseWithPath:[self getDocumentsPath]] ;
     if ([dateBase open]) {
