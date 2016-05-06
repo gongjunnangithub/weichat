@@ -20,11 +20,26 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FMDB/standalone (2.6.2):
+    - FMDB/standalone/default (= 2.6.2)
+    - FMDB/standalone/FTS (= 2.6.2)
+  - FMDB/standalone/default (2.6.2):
+    - sqlite3
+  - FMDB/standalone/FTS (2.6.2):
+    - sqlite3/fts
+  - sqlite3 (3.12.2):
+    - sqlite3/common (= 3.12.2)
+  - sqlite3/common (3.12.2)
+  - sqlite3/fts (3.12.2):
+    - sqlite3/common
 
 DEPENDENCIES:
   - AFNetworking (~> 2.1)
+  - FMDB/standalone
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  sqlite3: 5724400abcbfbc8d13c60d6a4123361faf0c62e3
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

@@ -7,12 +7,15 @@
 //
 
 #import "HomeViewController.h"
+#import "ContactAddView.h"
 #import "Define.h"
 #define Kmargin 5
 @interface HomeViewController ()
 @property(nonatomic,strong)UITableView *tableView ;
 @property(nonatomic,strong)UISearchBar *searchBar ;
 @property(nonatomic,strong)NSArray *dataArray ;
+@property(nonatomic,strong)NSArray  *contactArray ;
+@property(nonatomic,strong)ContactAddView *contactView ;
 @end
 
 @implementation HomeViewController
@@ -24,10 +27,15 @@
     self.tableView.delegate = self ;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine ;
     [self.view addSubview:self.tableView] ;
+    
     if (SystenVersion >= 7.0) {
         self.edgesForExtendedLayout = UIRectEdgeNone ;
     }
     [self setSearchBar];
+    UITapGestureRecognizer *guester = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapAction)] ;
+    [self.view addGestureRecognizer:guester] ;
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonicon_add"] style:UIBarButtonItemStylePlain target:self action:@selector(addAction)];
+    self.navigationItem.rightBarButtonItem = item ;
 }
 - (void)setSearchBar {
     self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0 , 0, KScreenWidth, 45)] ;
@@ -37,6 +45,57 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+// Lastdate  name imageName  lastContent 
+#pragma mark - +方法
+- (void)addAction {
+    if (self.contactView.hidden) {
+        self.contactView.hidden = !self.contactView.hidden ;
+    } else {
+        [UIView animateWithDuration:0.5 animations:^{
+            self.contactView.alpha = 0 ;
+            self.contactView.transform = CGAffineTransformMakeScale(0.1, 0.1);
+        } completion:^(BOOL finished) {
+            self.contactView.hidden = YES ;
+            self.contactView.alpha =1 ;
+            self.contactView.transform = CGAffineTransformIdentity ;
+        }] ;
+    }
+}
+#pragma mark - 点击 隐藏加号菜单
+- (void)viewTapAction {
+    if (!self.contactView.hidden) {
+        [self addAction] ;
+    }
+    
+}
+
+- (NSArray *)contactArray {
+    if (_contactArray == nil) {
+        _contactArray = [[NSArray alloc] init] ;
+        _contactArray = @[@{@"imageName":@"contacts_add_newmessage",@"title":@"发起群聊"},@{@"imageName":@"contacts_add_friend",@"title":@"添加朋友"},@{@"imageName":@"contacts_add_scan",@"title":@"扫一扫"},@{@"imageName":@"contacts_add_newmessage",@"title":@"收付款"}];
+    }
+    return _contactArray ;
+}
+- (ContactAddView *)contactView {
+    if (_contactView == nil) {
+        _contactView = [[ContactAddView alloc] init] ;
+        _contactView.layer.anchorPoint = CGPointMake(0.8, 0) ;
+        [self.view addSubview:_contactView] ;
+        [_contactView contactViewWithBtnArray:self.contactArray AndActionBlock:^(int i) {
+            switch (i) {
+                case 1:
+                    
+                    break;
+                    
+                default:
+                    break;
+            }
+        }] ;
+        _contactView.hidden = YES ;
+    }
+    return _contactView ;
+
 }
 
 #pragma mark - tableviewDelegate dataSource
@@ -53,4 +112,5 @@
     
     return [[UITableViewCell alloc] init] ;
 }
+
 @end

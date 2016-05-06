@@ -39,15 +39,14 @@
 }
 - (void)addVCWithVC:(UIViewController *)vc tabBarTitle:(NSString *)title PictureName:(NSString *)pictureNam AndNavTitle:(NSString *)navTitle{
     UINavigationController *nav = [[BaseNavigationVC alloc] initWithRootViewController:vc] ;
-    [self addChildViewController:nav] ;
-    nav.navigationItem.title = navTitle ;
-    nav.title = navTitle ;
+    nav.navigationBar.topItem.title = navTitle ;
     UITabBarItem *item = nav.tabBarItem ;
     item.title = title ;
     NSString *selectedImageName = [NSString stringWithFormat:@"%@HL",pictureNam];
     item.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] ;
     item.image = [UIImage imageNamed:pictureNam] ;
     [item setTitleTextAttributes:@{NSForegroundColorAttributeName :TabBarTitleColor} forState:UIControlStateSelected] ;
+    [self addChildViewController:nav] ;
 
 }
 @end
