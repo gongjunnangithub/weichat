@@ -10,6 +10,8 @@
 #import "Define.h"
 #import "BaseTabBarController.h"
 #import "HomeViewController.h"
+#import "FmdbClass.h"
+#import "TalkModel.h"
 @interface AppDelegate ()
 
 @end
@@ -24,6 +26,11 @@
     self.window.rootViewController = baseTabBarVC;//[[HomeViewController alloc] init] ;
     [self setNavigationBar] ;
     [self.window makeKeyAndVisible] ;
+    FmdbClass *fb = [[FmdbClass alloc] init] ;
+    [fb crateSqlite] ;
+    [fb insertMessages:nil];
+    NSArray *array = [fb resultss];
+    NSLog(@"%@",array);
     return YES;
 }
 

@@ -9,7 +9,6 @@
 #import "HomeCellTableViewCell.h"
 #import "Define.h"
 @interface HomeCellTableViewCell()
-@property(nonatomic,strong)UILabel *dateLabel ;
 @end
 @implementation HomeCellTableViewCell
 
@@ -28,6 +27,7 @@
     self.dateLabel.textAlignment = NSTextAlignmentRight ;
     self.dateLabel.textColor = [UIColor lightTextColor] ;
     self.dateLabel.font = [UIFont systemFontOfSize:Font12] ;
+    [self.contentView addSubview:self.dateLabel];
     return self ;
 }
 

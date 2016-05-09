@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "ContactAddView.h"
 #import "Define.h"
+#import "HomeCellTableViewCell.h"
+#import "FmdbClass.h"
 #define Kmargin 5
 @interface HomeViewController ()
 @property(nonatomic,strong)UITableView *tableView ;
@@ -98,19 +100,36 @@
 
 }
 
+- (NSArray *)dataArray {
+    if (_dataArray == nil) {
+        _dataArray = [[NSArray alloc] init] ;
+        FmdbClass *db = [[FmdbClass alloc] init] ;
+        _dataArray = [db resultss] ;
+    }
+    return _dataArray ;
+}
 #pragma mark - tableviewDelegate dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0 ;
+    return 1 ;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataArray.count ;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60 ;
+    return 80 ;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    return [[UITableViewCell alloc] init] ;
+   static NSString *homeCell = @"homeCell";
+    HomeCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeCell];
+    if (cell == nil) {
+        cell = [[HomeCellTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:homeCell] ;
+    }
+    TalkModel *model = self.dataArray[indexPath.row] ;
+    cell.imageView.image = [UIImage imageNamed:model.imageName];
+    cell.textLabel.text = model.name ;
+    cell.detailTextLabel.text = model.content ;
+    cell.dateLabel.text = model.lastDate ;
+    return cell ;
 }
 
 @end

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "TalkModel.h"
 @interface FmdbClass : NSObject
-
+-(void)crateSqlite ;
+- (void)insertMessages:(TalkModel *)models;
+- (NSArray *)resultss ;
 @end

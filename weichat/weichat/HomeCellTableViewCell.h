@@ -9,4 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HomeCellTableViewCell : UITableViewCell
+@property(nonatomic,strong)UILabel *dateLabel ;
+
 @end

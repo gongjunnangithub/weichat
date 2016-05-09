@@ -81,6 +81,7 @@
 		C9ED924A1CC8B32E00E38BA9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED92491CC8B32E00E38BA9 /* BaseViewController.m */; };
 		C9ED924D1CC8B3D400E38BA9 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED924C1CC8B3D400E38BA9 /* BaseNavigationVC.m */; };
 		C9ED92501CC8B3FE00E38BA9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED924F1CC8B3FE00E38BA9 /* HomeViewController.m */; };
+		C9EDEDFC1CE0693B00D91281 /* TalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EDEDFB1CE0693B00D91281 /* TalkModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +201,8 @@
 		C9ED924C1CC8B3D400E38BA9 /* BaseNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationVC.m; sourceTree = "<group>"; };
 		C9ED924E1CC8B3FE00E38BA9 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		C9ED924F1CC8B3FE00E38BA9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		C9EDEDFA1CE0693B00D91281 /* TalkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkModel.h; sourceTree = "<group>"; };
+		C9EDEDFB1CE0693B00D91281 /* TalkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +273,8 @@
 		C9E86E021CDC66DC007BF012 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				C9EDEDFA1CE0693B00D91281 /* TalkModel.h */,
+				C9EDEDFB1CE0693B00D91281 /* TalkModel.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -736,6 +741,7 @@
 				C9ED923E1CC8AE8300E38BA9 /* BaseTabBarController.m in Sources */,
 				C9ED924A1CC8B32E00E38BA9 /* BaseViewController.m in Sources */,
 				C9ED92101CC866DE00E38BA9 /* ViewController.m in Sources */,
+				C9EDEDFC1CE0693B00D91281 /* TalkModel.m in Sources */,
 				C9EC72FB1CD8797C00181B79 /* ContactsViewController.m in Sources */,
 				C9EC72F51CD8796300181B79 /* MineViewController.m in Sources */,
 				C9E86E061CDC8CEA007BF012 /* FmdbClass.m in Sources */,
