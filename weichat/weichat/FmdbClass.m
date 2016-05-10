@@ -40,21 +40,38 @@
             for (int i = 0 ; i < 10; i++) {
                 TalkModel *model = [[TalkModel alloc] init] ;
                 model.imageName = [NSString stringWithFormat:@"%d.jpg",i];
-                model.name = [NSString stringWithFormat:@"%d-%d-name",i,i] ;
+                model.name = [NSString stringWithFormat:@"and%dand%dandname",i,i] ;
                 model.lastDate = [self getRandomDate] ;
                 model.content = [NSString stringWithFormat:@"%d-%d-content",i,i];
                 [array addObject:model];
             }
             for (TalkModel *model in array) {
-                NSString *insetString = [NSString stringWithFormat:@"insert into %@ (imageName,name,lastDate) values('%@','%@','%@')",TableName,model.imageName,model.name,model.lastDate];
+                NSString *insetString = [NSString stringWithFormat:@"insert into %@ (imageName,name,lastDate,content) values('%@','%@','%@','%@')",TableName,model.imageName,model.name,model.lastDate,model.content];
                 BOOL insert = [db executeUpdate:insetString];
                 NSLog(@"%D",insert) ;
+                [self insertMesaggTable:model.name] ;
    
             }
         }
     }
-    
 
+}
+- (void)insertMesaggTable:(NSString *)tableName {
+    FMDatabase *db = [FMDatabase databaseWithPath:[self getDocumentsPath]] ;
+    if ([db open]) {
+        NSString *sqlite = [NSString stringWithFormat:@"create table if not exists %@(id integer primary key autoincrement,content text ,contentDate text ,sendPerson integer)",tableName];
+        BOOL result = [db executeUpdate:sqlite] ;
+        NSInteger snedPerson = 0 ;
+        NSString *content = [NSString stringWithFormat:@"%@--content--%@--sendPerson-%zd",tableName,tableName,snedPerson];
+        NSString *contentDate = [self getRandomDate];
+        NSString *insertString = [NSString stringWithFormat:@"insert into %@(content,contentDate,sendPerson) values('%@','%@','%zd')",tableName,content,contentDate,snedPerson];
+        NSString *conten2 = [NSString stringWithFormat:@"%@--content2--%@--sendPerson-%zd",tableName,tableName,!snedPerson];
+
+        NSString *insert2 = [NSString stringWithFormat:@"insert into %@(content,contentDate,sendPerson) values('%@','%@','%zd')",tableName,conten2,contentDate,!snedPerson];
+        BOOL reeult1 =[db executeUpdate:insertString];
+       BOOL result2 =  [db executeUpdate:insert2];
+        NSLog(@"result-%d result1-%D-result2-%D",result,reeult1,result2);
+    }
 
 }
 - (NSArray *)resultss{

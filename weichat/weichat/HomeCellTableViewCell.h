@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TalkModel.h"
 @interface HomeCellTableViewCell : UITableViewCell
 @property(nonatomic,strong)UILabel *dateLabel ;
-
+@property(nonatomic,strong)TalkModel *talkMidel ;
 @end

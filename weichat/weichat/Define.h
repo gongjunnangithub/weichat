@@ -15,10 +15,10 @@
 #define KScreenSize [UIScreen mainScreen].bounds.size
 #define KScreenWidth [UIScreen mainScreen].bounds.size.width
 #define KScreenHight [UIScreen mainScreen].bounds.size.height
-#define KTopHeight 64
-#define KBottomBarHeight 69
+#define KTopHeight 44
+#define KBottomBarHeight 54
 #define KNavBarH 49
-#define KStateBarH 20 
+#define KStateBarH 10
 
 #define Font12 12 
 #define Font14 14

@@ -26,11 +26,11 @@
     self.window.rootViewController = baseTabBarVC;//[[HomeViewController alloc] init] ;
     [self setNavigationBar] ;
     [self.window makeKeyAndVisible] ;
-    FmdbClass *fb = [[FmdbClass alloc] init] ;
-    [fb crateSqlite] ;
-    [fb insertMessages:nil];
-    NSArray *array = [fb resultss];
-    NSLog(@"%@",array);
+//    FmdbClass *fb = [[FmdbClass alloc] init] ;
+//    [fb crateSqlite] ;
+//    [fb insertMessages:nil];
+//    NSArray *array = [fb resultss];
+//    NSLog(@"%@",array);
     return YES;
 }
 

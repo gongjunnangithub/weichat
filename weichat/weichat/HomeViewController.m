@@ -116,19 +116,16 @@
     return self.dataArray.count ;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80 ;
+    return 70 ;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
    static NSString *homeCell = @"homeCell";
     HomeCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homeCell];
     if (cell == nil) {
-        cell = [[HomeCellTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:homeCell] ;
+        cell = [[HomeCellTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homeCell] ;
     }
     TalkModel *model = self.dataArray[indexPath.row] ;
-    cell.imageView.image = [UIImage imageNamed:model.imageName];
-    cell.textLabel.text = model.name ;
-    cell.detailTextLabel.text = model.content ;
-    cell.dateLabel.text = model.lastDate ;
+    cell.talkMidel = model ;
     return cell ;
 }
 
