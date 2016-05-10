@@ -11,8 +11,9 @@
 #import "Define.h"
 #import "HomeCellTableViewCell.h"
 #import "FmdbClass.h"
+#import "MessageVC.h"
 #define Kmargin 5
-@interface HomeViewController ()
+@interface HomeViewController ()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)UITableView *tableView ;
 @property(nonatomic,strong)UISearchBar *searchBar ;
 @property(nonatomic,strong)NSArray *dataArray ;
@@ -34,7 +35,8 @@
         self.edgesForExtendedLayout = UIRectEdgeNone ;
     }
     [self setSearchBar];
-    UITapGestureRecognizer *guester = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapAction)] ;
+    UITapGestureRecognizer *guester = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(viewTapAction:)] ;
+    guester.delegate = self ;
     [self.view addGestureRecognizer:guester] ;
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"barbuttonicon_add"] style:UIBarButtonItemStylePlain target:self action:@selector(addAction)];
     self.navigationItem.rightBarButtonItem = item ;
@@ -65,13 +67,18 @@
     }
 }
 #pragma mark - 点击 隐藏加号菜单
-- (void)viewTapAction {
+- (void)viewTapAction:(UITapGestureRecognizer *)gesture {
     if (!self.contactView.hidden) {
         [self addAction] ;
     }
     
 }
-
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+    if (self.contactView.hidden) {
+        return NO ;
+    }
+    return YES ;
+}
 - (NSArray *)contactArray {
     if (_contactArray == nil) {
         _contactArray = [[NSArray alloc] init] ;
@@ -128,5 +135,14 @@
     cell.talkMidel = model ;
     return cell ;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
+    cell.selected = NO ;
+    MessageVC *msgVC = [[MessageVC alloc] init] ;
+    TalkModel *model = self.dataArray[indexPath.row] ;
+    msgVC.navigationItem.title = model.name ;
+    [self.navigationController pushViewController:msgVC animated:YES] ;
 
+
+}
 @end

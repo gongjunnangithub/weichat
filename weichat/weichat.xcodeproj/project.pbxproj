@@ -14,6 +14,7 @@
 		C9E86E011CDC2D4A007BF012 /* ContactAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E86E001CDC2D4A007BF012 /* ContactAddView.m */; };
 		C9E86E061CDC8CEA007BF012 /* FmdbClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E86E051CDC8CEA007BF012 /* FmdbClass.m */; };
 		C9EAB2F51CE18BDB00F29AE3 /* MsgMOdel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAB2F41CE18BDB00F29AE3 /* MsgMOdel.m */; };
+		C9EAB2F81CE1E2A300F29AE3 /* MessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EAB2F71CE1E2A300F29AE3 /* MessageVC.m */; };
 		C9EC72C01CD8787900181B79 /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9EC728B1CD8787900181B79 /* 0.jpg */; };
 		C9EC72C11CD8787900181B79 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9EC728C1CD8787900181B79 /* 1.jpg */; };
 		C9EC72C21CD8787900181B79 /* 10.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C9EC728D1CD8787900181B79 /* 10.jpg */; };
@@ -118,6 +119,8 @@
 		C9E86E051CDC8CEA007BF012 /* FmdbClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FmdbClass.m; sourceTree = "<group>"; };
 		C9EAB2F31CE18BDB00F29AE3 /* MsgMOdel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MsgMOdel.h; sourceTree = "<group>"; };
 		C9EAB2F41CE18BDB00F29AE3 /* MsgMOdel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgMOdel.m; sourceTree = "<group>"; };
+		C9EAB2F61CE1E2A300F29AE3 /* MessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVC.h; sourceTree = "<group>"; };
+		C9EAB2F71CE1E2A300F29AE3 /* MessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVC.m; sourceTree = "<group>"; };
 		C9EC728B1CD8787900181B79 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
 		C9EC728C1CD8787900181B79 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
 		C9EC728D1CD8787900181B79 /* 10.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 10.jpg; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				C9EDEDFB1CE0693B00D91281 /* TalkModel.m */,
 				C9EAB2F31CE18BDB00F29AE3 /* MsgMOdel.h */,
 				C9EAB2F41CE18BDB00F29AE3 /* MsgMOdel.m */,
+				C9EAB2F61CE1E2A300F29AE3 /* MessageVC.h */,
+				C9EAB2F71CE1E2A300F29AE3 /* MessageVC.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -756,6 +761,7 @@
 				C9E86DFE1CDC2B12007BF012 /* ContactAddTableVC.m in Sources */,
 				C9ED920D1CC866DE00E38BA9 /* AppDelegate.m in Sources */,
 				C2F3F81E1CCE5C6000522CA0 /* NetRequest.m in Sources */,
+				C9EAB2F81CE1E2A300F29AE3 /* MessageVC.m in Sources */,
 				C9EAB2F51CE18BDB00F29AE3 /* MsgMOdel.m in Sources */,
 				C9ED44BA1CC9ED1700C04163 /* AppUnit.m in Sources */,
 				C9E86E011CDC2D4A007BF012 /* ContactAddView.m in Sources */,
