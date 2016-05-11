@@ -13,4 +13,5 @@
 -(void)crateSqlite ;
 - (void)insertMessages:(TalkModel *)models;
 - (NSArray *)resultss ;
+- (NSMutableArray *)resultWithName:(NSString *)name ;
 @end

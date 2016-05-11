@@ -7,9 +7,9 @@
 //
 
 #import "MessageVC.h"
-
+#import "FmdbClass.h"
 @interface MessageVC ()
-
+@property(nonatomic,strong)NSMutableArray *msgContent ;
 @end
 
 @implementation MessageVC
@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    NSLog(@"%@",self.msgContent) ;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +34,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (NSMutableArray *)msgContent {
+    if (_msgContent == nil) {
+        _msgContent = [NSMutableArray array] ;
+        _msgContent = [[[FmdbClass alloc] init] resultWithName:self.personModel.name] ;
+    }
 
+    return _msgContent ;
+}
 @end

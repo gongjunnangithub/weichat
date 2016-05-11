@@ -11,5 +11,5 @@
 @interface MsgMOdel : NSObject
 @property(nonatomic,strong)NSString *contentDate ;
 @property(nonatomic,strong)NSString *content ;
-@property(nonatomic,assign)NSInteger sendPerson ;
+@property(nonatomic,assign)int sendPerson ;
 @end

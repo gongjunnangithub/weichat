@@ -141,6 +141,7 @@
     MessageVC *msgVC = [[MessageVC alloc] init] ;
     TalkModel *model = self.dataArray[indexPath.row] ;
     msgVC.navigationItem.title = model.name ;
+    msgVC.personModel = model ;
     [self.navigationController pushViewController:msgVC animated:YES] ;
 
 

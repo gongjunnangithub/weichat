@@ -8,6 +8,7 @@
 #define KSqlite @"myswlite.sqlite"
 #define TableName @"Message"
 #import "FmdbClass.h"
+#import "MsgMOdel.h"
 #import <FMDB.h>
 @implementation FmdbClass
 - (NSString *)getDocumentsPath {
@@ -91,6 +92,23 @@
         return array ;
     }
     return nil ;
+
+}
+- (NSMutableArray *)resultWithName:(NSString *)name {
+    FMDatabase *db = [FMDatabase databaseWithPath:[self getDocumentsPath]];
+    NSMutableArray *resultArray = [NSMutableArray array];
+    if ([db open]) {
+        FMResultSet *set = [db executeQuery:[NSString stringWithFormat:@"select * from %@",name]];
+        while ([set next]) {
+            MsgMOdel *model = [[MsgMOdel alloc] init] ;
+            model.sendPerson = [set intForColumn:@"sendPerson"];
+            model.content = [set stringForColumn:@"content"];
+            model.contentDate = [set stringForColumn:@"contentDate"];
+            [resultArray addObject:model] ;
+        }
+    }
+
+    return [resultArray mutableCopy] ;
 
 }
 - (NSString *)getRandomDate {

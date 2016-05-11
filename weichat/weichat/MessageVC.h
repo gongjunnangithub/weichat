@@ -7,7 +7,7 @@
 //
 
 #import "BaseViewController.h"
-
+#import "TalkModel.h"
 @interface MessageVC : BaseViewController
-
+@property(nonatomic,strong)TalkModel *personModel ;
 @end
