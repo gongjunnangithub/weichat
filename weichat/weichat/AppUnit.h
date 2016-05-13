@@ -10,4 +10,5 @@
 
 @interface AppUnit : NSObject
 +(NSArray *)getUserRandomMsg ;
++(CGFloat)heightOfLableWithContent:(NSString *)content width:(CGFloat)width andFont:(UIFont* )font ;
 @end

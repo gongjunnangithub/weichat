@@ -15,4 +15,11 @@
 
     return nil ;
 }
++(CGFloat)heightOfLableWithContent:(NSString *)content width:(CGFloat)width andFont:(UIFont*)font {
+
+    CGSize size = CGSizeMake(width, CGFLOAT_MAX);
+    NSDictionary *dict = @{NSFontAttributeName:font};
+    CGSize lastSize = [content boundingRectWithSize:size options:NSStringDrawingUsesLineFragmentOrigin attributes:dict context:nil].size;
+    return lastSize.height ;
+}
 @end

@@ -23,8 +23,17 @@
 
 @implementation HomeViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    self = [super initWithNibName: nibNameOrNil bundle:nibBundleOrNil];
+    self.hidesBottomBarWhenPushed = NO ;
+    return self ;
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,KScreenWidth ,KScreenHight - KTopHeight - KBottomBarHeight) style:UITableViewStylePlain];
     self.tableView.dataSource = self ;
     self.tableView.delegate = self ;
@@ -139,6 +148,7 @@
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
     cell.selected = NO ;
     MessageVC *msgVC = [[MessageVC alloc] init] ;
+    msgVC.hidesBottomBarWhenPushed = YES ;
     TalkModel *model = self.dataArray[indexPath.row] ;
     msgVC.navigationItem.title = model.name ;
     msgVC.personModel = model ;

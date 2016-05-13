@@ -8,7 +8,7 @@
 
 #ifndef Define_h
 #define Define_h
-
+#import <Masonry.h>
 
 #endif /* Define_h */
 #define KScreenBounds [UIScreen mainScreen].bounds

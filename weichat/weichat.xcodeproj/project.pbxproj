@@ -10,6 +10,7 @@
 		12D0AE95C3366DD6998C5F46 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D3DDA2CF2A81A79E2497C8B /* libPods.a */; };
 		C2F3F81E1CCE5C6000522CA0 /* NetRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F3F81D1CCE5C6000522CA0 /* NetRequest.m */; };
 		C2F3F8211CCE62AA00522CA0 /* MessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F3F8201CCE62AA00522CA0 /* MessageModel.m */; };
+		C9B0548F1CE59B640045974D /* OthersCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B0548E1CE59B640045974D /* OthersCell.m */; };
 		C9E86DFE1CDC2B12007BF012 /* ContactAddTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E86DFD1CDC2B12007BF012 /* ContactAddTableVC.m */; };
 		C9E86E011CDC2D4A007BF012 /* ContactAddView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E86E001CDC2D4A007BF012 /* ContactAddView.m */; };
 		C9E86E061CDC8CEA007BF012 /* FmdbClass.m in Sources */ = {isa = PBXBuildFile; fileRef = C9E86E051CDC8CEA007BF012 /* FmdbClass.m */; };
@@ -84,6 +85,7 @@
 		C9ED924D1CC8B3D400E38BA9 /* BaseNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED924C1CC8B3D400E38BA9 /* BaseNavigationVC.m */; };
 		C9ED92501CC8B3FE00E38BA9 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9ED924F1CC8B3FE00E38BA9 /* HomeViewController.m */; };
 		C9EDEDFC1CE0693B00D91281 /* TalkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EDEDFB1CE0693B00D91281 /* TalkModel.m */; };
+		C9EEFACA1CE41E0D007972F6 /* MyMsgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C9EEFAC91CE41E0D007972F6 /* MyMsgCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +113,8 @@
 		C2F3F81D1CCE5C6000522CA0 /* NetRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetRequest.m; sourceTree = "<group>"; };
 		C2F3F81F1CCE62AA00522CA0 /* MessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageModel.h; sourceTree = "<group>"; };
 		C2F3F8201CCE62AA00522CA0 /* MessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageModel.m; sourceTree = "<group>"; };
+		C9B0548D1CE59B640045974D /* OthersCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OthersCell.h; sourceTree = "<group>"; };
+		C9B0548E1CE59B640045974D /* OthersCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OthersCell.m; sourceTree = "<group>"; };
 		C9E86DFC1CDC2B12007BF012 /* ContactAddTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactAddTableVC.h; sourceTree = "<group>"; };
 		C9E86DFD1CDC2B12007BF012 /* ContactAddTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactAddTableVC.m; sourceTree = "<group>"; };
 		C9E86DFF1CDC2D4A007BF012 /* ContactAddView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactAddView.h; sourceTree = "<group>"; };
@@ -209,6 +213,9 @@
 		C9ED924F1CC8B3FE00E38BA9 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		C9EDEDFA1CE0693B00D91281 /* TalkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkModel.h; sourceTree = "<group>"; };
 		C9EDEDFB1CE0693B00D91281 /* TalkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TalkModel.m; sourceTree = "<group>"; };
+		C9EEFAC81CE41E0D007972F6 /* MyMsgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMsgCell.h; sourceTree = "<group>"; };
+		C9EEFAC91CE41E0D007972F6 /* MyMsgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMsgCell.m; sourceTree = "<group>"; };
+		C9EEFACC1CE4216F007972F6 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +292,10 @@
 				C9EAB2F41CE18BDB00F29AE3 /* MsgMOdel.m */,
 				C9EAB2F61CE1E2A300F29AE3 /* MessageVC.h */,
 				C9EAB2F71CE1E2A300F29AE3 /* MessageVC.m */,
+				C9EEFAC81CE41E0D007972F6 /* MyMsgCell.h */,
+				C9EEFAC91CE41E0D007972F6 /* MyMsgCell.m */,
+				C9B0548D1CE59B640045974D /* OthersCell.h */,
+				C9B0548E1CE59B640045974D /* OthersCell.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -472,6 +483,7 @@
 				C9ED92401CC8AED900E38BA9 /* Define.h */,
 				C9ED44B81CC9ED1700C04163 /* AppUnit.h */,
 				C9ED44B91CC9ED1700C04163 /* AppUnit.m */,
+				C9EEFACC1CE4216F007972F6 /* PrefixHeader.pch */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -749,6 +761,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9B0548F1CE59B640045974D /* OthersCell.m in Sources */,
+				C9EEFACA1CE41E0D007972F6 /* MyMsgCell.m in Sources */,
 				C9ED923E1CC8AE8300E38BA9 /* BaseTabBarController.m in Sources */,
 				C9ED924A1CC8B32E00E38BA9 /* BaseViewController.m in Sources */,
 				C9ED92101CC866DE00E38BA9 /* ViewController.m in Sources */,
@@ -912,6 +926,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/weichat/PrefixHeader.pch";
 				INFOPLIST_FILE = weichat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yinlian.weichat;
@@ -926,6 +941,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/weichat/PrefixHeader.pch";
 				INFOPLIST_FILE = weichat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yinlian.weichat;

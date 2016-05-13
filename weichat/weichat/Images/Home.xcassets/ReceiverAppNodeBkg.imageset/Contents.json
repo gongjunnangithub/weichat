@@ -5,6 +5,20 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 1,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 39,
+          "top" : 68,
+          "right" : 36,
+          "left" : 95
+        }
+      },
       "idiom" : "universal",
       "filename" : "ReceiverAppNodeBkg@2x.png",
       "scale" : "2x"
