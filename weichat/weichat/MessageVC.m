@@ -10,6 +10,7 @@
 #import "FmdbClass.h"
 #import "MyMsgCell.h"
 #import "OthersCell.h"
+#import "Define.h"
 @interface MessageVC ()<UITextFieldDelegate>
 @property(nonatomic,strong)NSMutableArray *msgContent ;
 @property(nonatomic,strong)UITableView *contentTableView ;
@@ -18,6 +19,7 @@
 @property(nonatomic,strong)UITextField *inputLable ;
 @property(nonatomic,strong)UIButton *emogeBtn ;
 @property(nonatomic,strong)UIButton *addBtn ;
+@property(nonatomic,strong)UITapGestureRecognizer *tapGesture ;
 @end
 
 @implementation MessageVC
@@ -34,7 +36,25 @@
     [self.view addSubview:self.contentTableView];
     [self setBOttmViewUI];
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
 
+}
+- (void)viewDidLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    NSIndexPath *index = [NSIndexPath indexPathForRow:self.msgContent.count -1
+                                            inSection:0];
+    [self.contentTableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+//    NSIndexPath *index = [NSIndexPath indexPathForRow:self.msgContent.count -1
+//                                            inSection:0];
+//    [self.contentTableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionBottom animated:NO];;
+//
+}
 - (void)setBOttmViewUI {
     self.bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, KScreenHight -KBottomBarHeight, KScreenWidth, KBottomBarHeight)];
     [self.view addSubview:self.bottomView];
@@ -60,35 +80,43 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyBoardWillAppera:) name:UIKeyboardWillChangeFrameNotification object:nil];
 
 }
+#pragma mark -- 键盘 弹出
 - (void)keyBoardWillAppera:(NSNotification *)notification {
     NSLog(@"%@",notification);
     NSDictionary *dict = notification.userInfo ;
     CGRect beginREct = [[dict objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue];
     if (beginREct.origin.y == KScreenHight) {
+        NSIndexPath *index = [NSIndexPath indexPathForRow:self.msgContent.count -1
+                                                inSection:0];
+        [self.contentTableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionBottom animated:NO];;
         [self setChangeFrameUp:YES withHeight:beginREct.size.height];
     } else {
         [self setChangeFrameUp:NO withHeight:beginREct.size.height];
     }
 }
+#pragma mark - tableviewliandong
 - (void)setChangeFrameUp:(BOOL)up withHeight:(CGFloat)height{
     CGRect rect = self.bottomView.frame ;
     if (up) {
         rect.origin.y -= height  ;
+        [self.view addGestureRecognizer:self.tapGesture];
         
     } else {
-        rect.origin.y += height  ;
+        [self.view removeGestureRecognizer:self.tapGesture];
+        rect.origin.y = KScreenHight -KBottomBarHeight  ;
     }
-#pragma mark --TO do 
-    NSIndexPath *index = [NSIndexPath indexPathForRow:self.msgContent.count inSection:1];
+    NSIndexPath *index = [NSIndexPath indexPathForRow:self.msgContent.count -1
+                                            inSection:0];
     UITableViewCell *cell = [self.contentTableView cellForRowAtIndexPath:index];
     CGFloat y = CGRectGetMidY(cell.frame);
+    CGFloat cellH = cell.frame.size.height ;
     CGRect tableRect = self.contentTableView.frame ;
     if (tableRect.origin.y<0) {
         tableRect.origin.y = 0 ;
-    } else if ((int)y/KScreenHight) {
+    }  else if(y > KScreenHight - height-KBottomBarHeight-KTopHeight && y <= KScreenHight-KTopHeight-KBottomBarHeight){
+        tableRect.origin.y = KScreenHight - height-KBottomBarHeight-KTopHeight-y-cellH;
+    }   else if(y>KScreenHight-KTopHeight-KBottomBarHeight) {
         tableRect.origin.y =  -height ;
-    } else if(y > KScreenHight - height){
-        tableRect.origin.y = -tableRect.origin.y + (tableRect.origin.y - KScreenHight + height);
     }
     [UIView animateWithDuration:0.25 animations:^{
         self.bottomView.frame = rect;
@@ -138,5 +166,18 @@
     return cell ;
     }
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    KLog(cell);
+}
+- (UITapGestureRecognizer *)tapGesture {
+    if (_tapGesture == nil) {
+        _tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapView)] ;
+    }
 
+    return _tapGesture ;
+}
+- (void)tapView{
+    [self.inputLable resignFirstResponder]  ;
+}
 @end

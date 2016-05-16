@@ -9,7 +9,7 @@
 #import "ContactsViewController.h"
 
 @interface ContactsViewController ()
-
+@property(nonatomic,strong)UITableView *contactsList ;
 @end
 
 @implementation ContactsViewController
@@ -17,8 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"contacts_add_friend"] style:UIBarButtonItemStylePlain target:self action:@selector(addContacts)];
+    self.navigationController.navigationItem.rightBarButtonItem = item ;
 }
+- (void)addContacts{
 
+
+
+}
+- (void)setTableView {
+    self.contactsList = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+    
+    
+
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

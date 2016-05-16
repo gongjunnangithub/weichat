@@ -15,10 +15,10 @@
 #define KScreenSize [UIScreen mainScreen].bounds.size
 #define KScreenWidth [UIScreen mainScreen].bounds.size.width
 #define KScreenHight [UIScreen mainScreen].bounds.size.height
-#define KTopHeight 44
-#define KBottomBarHeight 54
-#define KNavBarH 49
-#define KStateBarH 10
+#define KTopHeight 64
+#define KBottomBarHeight 49
+#define KNavBarH 44
+#define KStateBarH 20
 
 #define Font12 12 
 #define Font14 14
@@ -29,3 +29,4 @@
 
 #pragma mark -- color 
 #define TabBarTitleColor  [UIColor colorWithRed:0 green:(190 / 255.0) blue:(12 / 255.0) alpha:1] 
+#define KLog(xx) NSLog(@"%@",xx)
