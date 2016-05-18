@@ -33,7 +33,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0,KScreenWidth ,KScreenHight - KTopHeight - KBottomBarHeight) style:UITableViewStylePlain];
     self.tableView.dataSource = self ;
     self.tableView.delegate = self ;

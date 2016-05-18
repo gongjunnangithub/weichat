@@ -11,4 +11,5 @@
 @interface AppUnit : NSObject
 +(NSArray *)getUserRandomMsg ;
 +(CGFloat)heightOfLableWithContent:(NSString *)content width:(CGFloat)width andFont:(UIFont* )font ;
++(UIImage*) OriginImage:(UIImage *)image scaleToSize:(CGSize)size ;
 @end
